@@ -57,4 +57,72 @@ using namespace llvm;
 //
 // declare void @bar(i32)
 // declare i32 @baz(...)
-std::unique_ptr<Module> myBuildModule(LLVMContext &Ctxt) { return nullptr; }
+std::unique_ptr<Module> myBuildModule(LLVMContext &Ctxt) {
+
+     Type* intType = Type::getInt32Ty(Ctxt);
+     Type* voidType = Type::getVoidTy(Ctxt);
+
+     std::unique_ptr<Module> MyModule = std::make_unique<Module>("MyModule", Ctxt);
+
+     FunctionType *bazType = FunctionType::get(intType, false);
+     FunctionType *barType = FunctionType::get(voidType, {intType}, false);
+
+     FunctionCallee bazFun = MyModule->getOrInsertFunction("baz", bazType);
+     FunctionCallee barFun = MyModule->getOrInsertFunction("bar", barType);
+
+     FunctionType *fooType = FunctionType::get(voidType, {intType, intType}, false);
+     Function *fooFun = Function::Create(fooType, GlobalValue::ExternalLinkage, "foo", *MyModule);
+     
+     
+     
+     BasicBlock *bb1 = BasicBlock::Create(Ctxt, "bb1", fooFun);
+     BasicBlock *bb2 = BasicBlock::Create(Ctxt, "bb2", fooFun);
+     BasicBlock *bb3 = BasicBlock::Create(Ctxt, "bb3", fooFun);
+     
+
+
+     IRBuilder builder(bb1);
+
+     // creating instructions of bb1
+     AllocaInst *var = builder.CreateAlloca(intType);
+     AllocaInst *a = builder.CreateAlloca(intType);
+     AllocaInst *b = builder.CreateAlloca(intType);
+
+     builder.CreateStore(fooFun->getArg(0), a);
+     builder.CreateStore(fooFun->getArg(1), b);
+
+     Value *aVal = builder.CreateLoad(intType, a);
+     Value *bVal = builder.CreateLoad(intType, b);
+
+
+     Value *addab = builder.CreateAdd(aVal, bVal);
+
+     builder.CreateStore(addab, var);
+
+     Value *varVal = builder.CreateLoad(intType, var);
+
+     Value *cmp = builder.CreateCmp(CmpInst::Predicate::ICMP_EQ, varVal, ConstantInt::get(intType, 0));
+
+     builder.CreateCondBr(cmp, bb2, bb3);
+     
+
+
+     // creating instructions of bb2
+     builder.SetInsertPoint(bb2);
+     varVal = builder.CreateLoad(intType, var);
+
+     builder.CreateCall(barFun, {varVal});
+     Value *res = builder.CreateCall(bazFun);
+     builder.CreateStore(res, var);
+     builder.CreateBr(bb3);
+
+
+     // creating instructions of bb3
+     builder.SetInsertPoint(bb3);
+     varVal = builder.CreateLoad(intType, var);
+     builder.CreateCall(barFun, {varVal});
+     builder.CreateRetVoid();
+     builder.SetInsertPoint(bb3);
+
+     return MyModule; 
+}
