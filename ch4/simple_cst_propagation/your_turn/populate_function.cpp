@@ -1,3 +1,4 @@
+#include "llvm/ADT/PostOrderIterator.h" // For ReversePostOrderTraversal.
 #include "llvm/CodeGen/GlobalISel/MachineIRBuilder.h"
 #include "llvm/CodeGen/MachineFrameInfo.h" // For CreateStackObject.
 #include "llvm/CodeGen/MachineFunction.h"
