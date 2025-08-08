@@ -68,7 +68,7 @@ The message after each processing will tell you if you did better than the refer
 
 Using the following command line, you can produce from a C file an input to give to your program:
 ```bash
-clang -o - -S -emit-llvm test.c -O0 | sed -e 's#optnone##g' | <path/to/llvm/build>/bin/opt -S -passes=mem2reg,instnamer > input.ll
+clang -o - -S -emit-llvm input.c -O0 | sed -e 's#optnone##g' | <path/to/llvm/build>/bin/opt -S -passes=mem2reg,instnamer > input.ll
 ```
 
 optnone => remove the attribute that prevents optimizations
