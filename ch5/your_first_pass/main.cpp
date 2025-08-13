@@ -139,5 +139,5 @@ int main(int argc, char **argv) {
                [](const Function &F) { return checkFunctionCorrectness(F); });
     hadError |= !solutionIsCorrect;
   }
-  return !hadError;
+  return hadError;
 }
