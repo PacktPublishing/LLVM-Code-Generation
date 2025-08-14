@@ -16,8 +16,8 @@ include(${LLVM_CMAKE_DIR}/TableGen.cmake)
 set(LLVM_TARGET_DEFINITIONS my-first-gisel.td)
 tablegen(LLVM GlobalISel.inc -gen-global-isel)
 
-set(LLVM_TARGET_DEFINITIONS Person.td)
-tablegen(LLVM Person.inc -print-records)
+set(LLVM_TARGET_DEFINITIONS person.td)
+tablegen(LLVM person.inc -print-records)
 
 set(LLVM_TARGET_DEFINITIONS multiclass.td)
 tablegen(LLVM multiclass.inc -print-records)
