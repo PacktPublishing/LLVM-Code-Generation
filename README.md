@@ -154,6 +154,7 @@ _Quentin Colombet_ is a veteran LLVM contributor specializing in compiler backen
 * Page 86: In the last paragraph first sentence "Using the same code snippet as the previous section, a frontend generates an IR that resembles what is depicted in _Figure 4.2_", the correct image reference is _Figure 4.1_.
 * Page 92: In Figure 4.5, the labels on the left side should just be `getOperand(0)` and `getOperand(1)`. In both the lines, `getopenand(0) =>` and `getopenand(n) =>` are to be disregarded. 
 * Page 106: In _Figure 4.6_, the block at the center labelled as "excluding" should be "exiting".
+* Page 277: "and it is possible to call the TargetMachine::addPassesToEmitPasses method" should be "TargetMachine::addPassesToEmitFile".
 * Page 361: The term `MCInstrPrinter` should be `MCInstPrinter`.
 * Page 363: Both the instances of the term `XXXInstrPrinter` should be `XXXInstPrinter`.
 * Page 455: In _Table 17.1_, under the **Original code** column on the left side, the line `%vec1 = insertelement <2 x i32> %vec, i32 %a, i32 1` should be `%vec1 = insertelement <2 x i32> %vec, i32 %b, i32 1` (i.e. **%a** should be **%b**).
