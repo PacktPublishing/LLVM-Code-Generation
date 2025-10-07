@@ -152,7 +152,8 @@ _Quentin Colombet_ is a veteran LLVM contributor specializing in compiler backen
 * Page 75: In the sentence "For this exercise, the linkage type does not matter; you can pick whatever enum value you want – for example, `GlobalValue::CommonLinkage`", `CommonLinkage` is actually the one linkage type that doesn't work for functions. Instead, one can use the `GlobalValue::ExternalLinkage` enum value in this case.
 * Page 80: In the C program in first question under _Quiz_, `res` should be declared as `int res = 0;` after the first line (`int foo(int b) {`) and before the `for` loop. Also, in the following diagram, there should be an additional arrow from the top rectangle going to the bottom most rectangle, so that it reflects the case where the loop is not entered and the function directly returns `res`.
 * Page 86: In the last paragraph first sentence "Using the same code snippet as the previous section, a frontend generates an IR that resembles what is depicted in _Figure 4.2_", the correct image reference is _Figure 4.1_.
-* Page 92: In Figure 4.5, the labels on the left side should just be `getOperand(0)` and `getOperand(1)`. In both the lines, `getopenand(0) =>` and `getopenand(n) =>` are to be disregarded. 
+* Page 92: In Figure 4.5, the labels on the left side should just be `getOperand(0)` and `getOperand(1)`. In both the lines, `getopenand(0) =>` and `getopenand(n) =>` are to be disregarded.
+* Page 92: In the second bullet point, in the sentence "To put it simply, idom(`n`) is the last/closet node that dominates `n`.", "**closet**" should be "**closest**".
 * Page 106: In _Figure 4.6_, the block at the center labelled as "excluding" should be "exiting".
 * Page 277: "and it is possible to call the TargetMachine::addPassesToEmitPasses method" should be "TargetMachine::addPassesToEmitFile".
 * Page 361: The term `MCInstrPrinter` should be `MCInstPrinter`.
