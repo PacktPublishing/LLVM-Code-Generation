@@ -145,6 +145,7 @@ _Quentin Colombet_ is a veteran LLVM contributor specializing in compiler backen
 ## Errata
 
 * Page 6: Under the heading _Identifying the right version of the tools_, in step 1 the hyperlink on the URL [https://releases.llvm.org/] in the digital formats redirects to [https://www.python.org/downloads/]. Please copy and paste the link [https://releases.llvm.org/] in the browser to navigate to the correct webpage.
+  Also, the sentence phrase "With no further **due**" should be "With no further **ado**".
 * Page 11: In the command `$ git clone https://github.com/llvm/llvm/project.git`, the URL should be `https://github.com/llvm/llvm-project.git`. Therefore, the first line becomes `$ git clone https://github.com/llvm/llvm-project.git`.
 * Page 31: In the command `$ cmake –GNinja -DCMAKE_C_COMPILER=${BUILD_DIR}/bin/clang ${TESTSUITE_DIR}`, `–` should be replaced with `-`. In the command `$ cmake -GNinja -DCMAKE_C_COMPILER=${BUILD_DIR}/bin/clang -C${TESTSUITE_DIR}/cmake/cache/<specificOption>.cmake ${TESTSUITE_DIR}`, `cache` should be replaced with `caches`. Same to `/cmake/cache/O3.cmake`.
 * Page 71: In the description below _Figure 3.4_, the sentence "Because of that, inserting a store in A and **reloading in B** means that the whole dotted region needs to play nicely with this memory location." should be "Because of that, inserting a store in A and **reloading in C** means that the whole dotted region needs to play nicely with this memory location."
