@@ -1,3 +1,5 @@
+<p align='center'><a href='https://www.packtpub.com/en-us/unlock?step=1'><img src='https://static.packt-cdn.com/assets/images/packt+events/finalGH_design_redeem.png'/></a></p>
+
 <h1 align="center">LLVM Code Generation, First Edition</h1>
 
 <h2 align="center">A deep dive into compiler backend development</h2>
