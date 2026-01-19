@@ -103,5 +103,5 @@ int main(int argc, char **argv) {
     outs() << "\n######\n";
   }
 
-  return !hadError;
+  return hadError;
 }

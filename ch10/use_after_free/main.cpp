@@ -23,5 +23,5 @@ int main(int argc, char **argv) {
     hadError |= true;
   }
 
-  return !hadError;
+  return hadError;
 }
