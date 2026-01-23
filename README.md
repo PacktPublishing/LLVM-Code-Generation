@@ -159,6 +159,7 @@ _Quentin Colombet_ is a veteran LLVM contributor specializing in compiler backen
 * Page 92: In the second bullet point, in the sentence "To put it simply, idom(`n`) is the last/closet node that dominates `n`.", "**closet**" should be "**closest**".
 * Page 106: In _Figure 4.6_, the block at the center labelled as "excluding" should be "exiting".
 * Page 130: In the sentence "You mark an analysis as preserved by calling `AnalysisUsage::setPreserved</*AnalysisPass*/>()`, `AnalysisUsage::setPreserved` should be `AnalysisUsage::addPreserved`.
+* Page 183: There is a typo in the name of the static function to check whether a function is an intrinsic. The proper function is `Function::isTargetIntrinsic` not `Function::isTargetInstrinsic`.
 * Page 209: In the "Value tracking" section there a typo in the number of bits that will be set to zeros for `%a`. The correct value here is two: "the first two least significant bits of `%a` will be zeros".
 * Page 277: "and it is possible to call the TargetMachine::addPassesToEmitPasses method" should be "TargetMachine::addPassesToEmitFile".
 * Page 361: The term `MCInstrPrinter` should be `MCInstPrinter`.
