@@ -1,16 +1,16 @@
+#include "llvm/ADT/APInt.h"
 #include "llvm/ADT/PostOrderIterator.h" // For ReversePostOrderTraversal.
-#include "llvm/CodeGen/GlobalISel/MachineIRBuilder.h"
-#include "llvm/CodeGen/MachineFrameInfo.h" // For CreateStackObject.
-#include "llvm/CodeGen/MachineFunction.h"
-#include "llvm/CodeGen/MachineMemOperand.h" // For MachinePointerInfo.
-#include "llvm/CodeGen/MachineModuleInfo.h"
-#include "llvm/CodeGen/MachineRegisterInfo.h"
-#include "llvm/CodeGen/Register.h"
-#include "llvm/CodeGen/TargetOpcodes.h"     // For INLINEASM.
-#include "llvm/CodeGenTypes/LowLevelType.h" // For LLT.
+#include "llvm/IR/BasicBlock.h"
+#include "llvm/IR/CFG.h"       // To instantiate RPOTraversal.
+#include "llvm/IR/Constants.h" // For ConstantInt.
 #include "llvm/IR/Function.h"
-#include "llvm/IR/InstrTypes.h" // For ICMP_EQ.
+#include "llvm/IR/InstrTypes.h" // For BinaryOperator, etc.
+#include "llvm/IR/Instruction.h"
+#include "llvm/IR/LLVMContext.h"
+#include "llvm/IR/Module.h"
+#include "llvm/Support/Debug.h" // For errs().
 
+#include <optional>
 using namespace llvm;
 
 // Takes \p Foo and apply a simple constant propagation optimization.
