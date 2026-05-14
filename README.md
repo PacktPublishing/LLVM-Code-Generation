@@ -166,5 +166,5 @@ _Quentin Colombet_ is a veteran LLVM contributor specializing in compiler backen
 * Page 363: Both the instances of the term `XXXInstrPrinter` should be `XXXInstPrinter`.
 * Page 455: In _Table 17.1_, under the **Original code** column on the left side, the line `%vec1 = insertelement <2 x i32> %vec, i32 %a, i32 1` should be `%vec1 = insertelement <2 x i32> %vec, i32 %b, i32 1` (i.e. **%a** should be **%b**).
 * Page 504: The sentence "The bindings are simple instantiations of the `ReadAdvance` and `WriteRes` classes or instantiations of `InstR`." should be "The bindings are simple instantiations of the `ReadAdvance` and `WriteRes` classes or instantiations of `InstRW`.". (`InstR` is changed to `InstRW`.)
+* Page 529: `such a convention in Figure 20.3.`, Page 534: `take a look at Figure 20.3`, Page 536: `illustrate it in Figure 20.3.`, Page 539: `Figure 20.3 shows one of the ways`, `Figure 20.3 shows a simplified view of the stack`, all of Figure 20.3 should be Figure 20.2
 * Page 531: CreateFixedSpillStackObject method of the MachineRegisterInfo class, `MachineRegisterInfo` should be `MachineFrameInfo`.
-* Page 538: `Figure 20.2: A possible layout of a stack growing downward`, 20.2 should be 20.3.
